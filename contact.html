@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - My Family Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>My Family Website</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <h2>Contact Me</h2>
+
+    <p>Fill in the form below and send me a WhatsApp message.</p>
+
+    <form id="whatsappForm">
+
+        <label>Your Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+
+        <label>Your Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label>Your Message</label>
+        <textarea id="message" rows="6" placeholder="Type your message here..." required></textarea>
+
+        <button type="submit">Send via WhatsApp</button>
+
+    </form>
+
+</div>
+
+ <footer class="footer">
+
+   &copy; copyright @ 2026, brought to you by FIS student <a href="https://fountinfo.com.ng" >Fountain Information Service</a></span> 
+
+</footer>
+
+<script>
+document.getElementById("whatsappForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+
+    let phone = "2348033513627";
+
+    let text =
+`Hello,
+
+My Name: ${name}
+
+Email: ${email}
+
+Message:
+${message}`;
+
+    let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(text);
+
+    window.open(url, "_blank");
+
+});
+</script>
+
+</body>
+</html>
